@@ -10,53 +10,32 @@ def home(request):
 
 
 def easy_password(request):
-    all = []
-    res = ''
-    for i in ascii_letters:
-        all.append(i)
+    difficulty = request.GET.get('difficulty', 'easy')
+    route = request.path
+    all_chars = list(ascii_letters)
 
-    num = randint(8, 20)
-    print(num)
-    while num:
-        num -= 1
-        x = choice(all)
-        res += x
-    return render(request, 'generator/password.html',context={'generate': res})
+    password_length = randint(8, 20)
+    password = ''.join([choice(all_chars) for _ in range(password_length)])
+
+    return render(request, 'generator/password.html', context={'generate': password,'route':route,'difficulty': difficulty})
 
 
 def medium_password(request):
-    all = []
-    res = ''
+    difficulty = request.GET.get('difficulty', 'medium')
+    route = request.path
+    all_chars = list(ascii_letters + digits)
 
-    for i in digits:
-        all.append(i)
+    password_length = randint(8, 20)
+    password = ''.join([choice(all_chars) for _ in range(password_length)])
 
-    for i in ascii_letters:
-        all.append(i)
-
-    num = randint(8, 20)
-    while num:
-        num -= 1
-        x = choice(all)
-        res += x
-    return render(request, 'generator/password.html',context={'generate': res})
+    return render(request, 'generator/password.html', context={'generate': password,'route':route,'difficulty': difficulty})
 
 def hard_password(request):
-    all = []
-    res = ''
+    difficulty = request.GET.get('difficulty', 'hard')
+    route = request.path
+    all_chars = list(ascii_letters + digits + punctuation)
 
-    for i in digits:
-        all.append(i)
+    password_length = randint(8, 20)
+    password = ''.join([choice(all_chars) for _ in range(password_length)])
 
-    for i in ascii_letters:
-        all.append(i)
-
-    for i in punctuation:
-        all.append(i)
-
-    num = randint(8, 20)
-    while num:
-        num -= 1
-        x = choice(all)
-        res += x
-    return render(request, 'generator/password.html',context={'generate': res})
+    return render(request, 'generator/password.html', context={'generate': password,'route':route,'difficulty': difficulty})

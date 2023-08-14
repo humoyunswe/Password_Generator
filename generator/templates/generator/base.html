@@ -4,10 +4,36 @@
 <head>
     <meta charset="UTF-8">
     {% block heading %}{% endblock heading %}
-    <link rel="stylesheet" href="{% static 'generator/style.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'generator/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
 </head>
 <body>
     {% block content %}{% endblock content %}
+    <script>
+        function myFunction() {
+        // Get the text field
+        var copyText = document.getElementById("myInput");
+
+        // Select the text field
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); // For mobile devices
+
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText.value);
+
+        // Alert the copied text
+        alert("Copied the Password: " + copyText.value);
+        }
+
+        function updateRoute(difficulty) {
+        const currentPath = window.location.pathname;
+        const newPath = `${currentPath}?difficulty=${difficulty}`;
+        history.pushState({}, '', newPath);
+    }
+    </script>
 </body>
 </html>

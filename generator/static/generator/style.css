@@ -4,5 +4,43 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #FCBBBB;
+}
+
+.card {
+    background-color: #FCBBBB;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+}
+
+
+h1, h2 {
+    font-family: 'Kaushan Script', cursive;
+    color: lightcoral;
+}
+
+h4 {
+    font-family: 'Roboto Light', serif;
+}
+
+button {
+    font-family: 'Damion', cursive;
+    font-size: 32px;
+    color: lightcoral;
+    border-radius: 15px;
+    border: 1px solid white;
+}
+
+input {
+    border-radius: 15px;
+    border: 1px solid lightcoral;
+    font-family: 'Kaushan Script', cursive;
+    font-size: large;
+    color: white  ;
+    background-color: lightcoral;
+}
+
+
 
 
