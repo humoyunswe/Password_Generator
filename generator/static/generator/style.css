@@ -5,19 +5,25 @@
 }
 
 body {
-    background-color: #FCBBBB;
+    background-color: #fff;
 }
 
 .card {
-    background-color: #FCBBBB;
+    background-color: lightblue;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
 }
 
 
-h1, h2 {
+h2 {
     font-family: 'Kaushan Script', cursive;
     color: lightcoral;
+}
+
+h1 {
+    background-color: lightcoral;
+    font-family: 'Kaushan Script', cursive;
+    color: white;
 }
 
 h4 {
